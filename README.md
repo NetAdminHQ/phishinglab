@@ -129,5 +129,3 @@ Feel free to fork, contribute, or open an issue!
 MIT License  
 Use at your own risk. Always analyze emails responsibly.
 ```
-
----
