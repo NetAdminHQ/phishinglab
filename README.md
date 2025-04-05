@@ -131,11 +131,3 @@ Use at your own risk. Always analyze emails responsibly.
 ```
 
 ---
-
-### ✅ Next Steps
-
-Would you like me to generate and save:
-- `config.py.template` with placeholders (safe for GitHub)?
-- `.gitignore` to ignore `config.py`, virtual env, etc.?
-
-Happy to help wrap this all up cleanly.
