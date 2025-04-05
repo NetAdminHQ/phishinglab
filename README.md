@@ -1,46 +1,41 @@
-Oops — you're totally right 😅  
-Let me give you a clean and ready-to-copy version of the `README.md` with working markdown, code blocks, and clear formatting:
+Awesome! Here's the full, polished `README.md` — already broken into safe, working Markdown sections for GitHub. You can copy-paste this or save it directly to your repo.
 
 ---
 
-## ✅ `README.md`
+## ✅ Final `README.md`
 
 ```markdown
 # 🧪 phishinglab
 
-A modular Python-based email scanner that detects malicious attachments and suspicious links — without using paid APIs like VirusTotal.
-
----
+A modular Python-based email scanner that detects malicious attachments and suspicious links — **without using paid APIs like VirusTotal**.
 
 ## 🚀 Features
 
 - 📬 Fetch unread emails via IMAP
-- 📦 Extract `.zip` attachments from emails
-- 🧪 Scan attachments using custom YARA rules
-- 🌐 Analyze links in email body:
-  - Detect phishing-related keywords in domains
-  - Flag domains registered in the last 30 days
-- 🔐 Fully offline link analysis (no paid APIs)
-- 📁 Automatically sort emails into: `Clean`, `ToBeInspected`
+- 📦 Extract `.zip` attachments
+- 🧪 Scan attachments using YARA rules
+- 🌐 Analyze email links:
+  - Detect phishing keywords in domains
+  - Flag recently registered domains
+- 🔐 Fully offline, privacy-respecting
+- 📁 Sorts emails into folders: `Clean`, `ToBeInspected`
 
 ---
 
 ## 📁 Project Structure
 
-```
 phishinglab/
-├── main.py                   # Orchestrates the whole process
-├── config.py                 # Sensitive settings (email credentials etc.)
-├── email_client.py           # Connects to IMAP and fetches emails
-├── attachment_handler.py     # Extracts ZIP attachments
-├── yara_scanner.py           # Static malware scan using YARA
-├── link_checker.py           # Suspicious link detection (domain analysis)
-├── sandbox_runner.py         # Optional: run files in isolated environment
-├── utils.py                  # Helpers (hashing, moving emails)
-├── requirements.txt          # Python dependencies
-└── rules/
-    └── malware_rules.yar     # Your YARA rule definitions
-```
+├── main.py               # Orchestrator script  
+├── config.py             # Email credentials and paths (ignored by Git)  
+├── email_client.py       # Connects to IMAP  
+├── attachment_handler.py # Extracts and saves ZIPs  
+├── yara_scanner.py       # YARA-based static scan  
+├── link_checker.py       # Suspicious link/domain checker  
+├── sandbox_runner.py     # (Optional) run malware in a VM  
+├── utils.py              # Hashing, folder helpers, etc.  
+├── requirements.txt      # Python dependencies  
+└── rules/  
+    └── malware_rules.yar # Custom YARA rules
 
 ---
 
@@ -67,14 +62,14 @@ pip install -r requirements.txt
 
 ## 🔐 Configuration
 
-Copy and edit your configuration file:
+Copy the config template:
 ```bash
 cp config.py.template config.py
 ```
 
-Fill in your email details in `config.py`:
+Edit `config.py` with your email settings:
 ```python
-EMAIL = "your_email@example.com"
+EMAIL = "you@example.com"
 PASSWORD = "your_app_password"
 IMAP_SERVER = "imap.example.com"
 
@@ -83,54 +78,64 @@ EXTRACTED_DIR = "extracted"
 YARA_RULE_FILE = "rules/malware_rules.yar"
 ```
 
-**⚠️ Never commit your `config.py` to GitHub. Use `.gitignore` to keep it private.**
+**⚠️ Important:** Never commit `config.py` to GitHub.  
+Use `.gitignore` to keep it out of version control.
 
 ---
 
-## ▶️ Run the Scanner
+## ▶️ Running the Scanner
 
 ```bash
 python3 main.py
 ```
 
+The scanner will:
+- Connect to the inbox via IMAP  
+- Extract and scan `.zip` files using YARA  
+- Analyze links in the email body  
+- Flag suspicious domains  
+- Move emails to `Clean` or `ToBeInspected`
+
 ---
 
 ## 🛡️ Safe Usage Tips
 
-- Use a **dedicated inbox** for testing (not your real one)
-- Run in a **virtual machine** or isolated environment
-- Inspect suspicious results before interacting with them
-- Enable sandboxing **only** if properly isolated
+- Use a **dedicated test inbox**, not your main account
+- Run the scanner in a **virtual machine or isolated environment**
+- Never click on suspicious links or files directly
+- Sandbox execution should be run in a safe, disconnected VM
 
 ---
 
-## 🧪 Roadmap / Ideas
+## 🧪 Roadmap / Future Ideas
 
-- DKIM/SPF checks
+- SPF/DKIM/DMARC validation
+- Office macro detection
 - PDF phishing detection
-- Office macro analysis
-- ELK integration (for alerting)
-- Web interface (dashboard)
+- Web dashboard (Flask + Tailwind)
+- Integration with ELK stack or SIEM
 
 ---
 
 ## 👨‍💻 Author
 
-Made by [NetAdminHQ](https://github.com/NetAdminHQ) with ❤️  
-Pull requests and suggestions welcome!
+Created by [NetAdminHQ](https://github.com/NetAdminHQ)  
+Feel free to fork, contribute, or open an issue!
 
 ---
 
 ## 📄 License
 
-MIT License — free to use, modify, and improve.
+MIT License  
+Use at your own risk. Always analyze emails responsibly.
 ```
 
 ---
 
-Let me know if you want me to:
-- Save this to a file for you (and push it)
-- Add a matching `config.py.template`
-- Set up `.gitignore` if it's not already there
+### ✅ Next Steps
 
-Ready when you are 💻🔥
+Would you like me to generate and save:
+- `config.py.template` with placeholders (safe for GitHub)?
+- `.gitignore` to ignore `config.py`, virtual env, etc.?
+
+Happy to help wrap this all up cleanly.
